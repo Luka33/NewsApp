@@ -2,6 +2,7 @@
 using NewsApp.Core.Data.SqlServer.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace NewsApp.Core.Data.SqlServer.Repository
@@ -42,5 +43,15 @@ namespace NewsApp.Core.Data.SqlServer.Repository
             _context.Entry(entity).State = EntityState.Modified;
             Save();
         }
+
+        //public IEnumerable<T> Find(Func<T, bool> predicate)
+        //{
+        //    return _context.Set<T>().Where(predicate);
+        //}
+
+        //public int Count(Func<T, bool> predicate)
+        //{
+        //    return _context.Set<T>().Where(predicate).Count();
+        //}
     }
 }

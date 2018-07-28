@@ -10,6 +10,6 @@ namespace NewsApp.Core.Data.SqlServer
     {
         public NewsAppDbContext(DbContextOptions<NewsAppDbContext> options) : base(options) { }
 
-        public DbSet<News> NewsList { get; set; }
+        public DbSet<News> News { get; set; }
     }
 }

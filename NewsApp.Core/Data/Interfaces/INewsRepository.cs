@@ -1,10 +1,11 @@
-﻿using System;
+﻿using NewsApp.Core.Data.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace NewsApp.Core.Data.Interfaces
 {
-    interface INewsRepository
+    public interface INewsRepository : IRepository<News>
     {
     }
 }

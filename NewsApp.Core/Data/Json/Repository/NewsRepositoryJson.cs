@@ -13,7 +13,7 @@ namespace NewsApp.Core.Data.Json.Repository
 {
     public class NewsRepositoryJson : IRepositoryJson<News>, INewsRepository
     {
-        protected string filePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\proizvodiJsonData.json";
+        protected string filePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\newsJsonData.json";
         public NewsRepositoryJson()
         {
             if (!File.Exists(filePath))

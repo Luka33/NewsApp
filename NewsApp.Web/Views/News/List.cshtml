@@ -1,0 +1,53 @@
+﻿@model IEnumerable<NewsViewModel>
+
+@{
+    ViewData["Title"] = "News";
+}
+
+<h3>News</h3>
+<div class="row">
+    <div class="col-md-8">
+        <a class="btn btn-success mt-5" style="margin: 10px 0" asp-controller="News" asp-action="Create">Create</a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-bordered table-hover">
+            <colgroup>
+                <col class="col-md-1">
+                <col class="col-md-1">
+                <col class="col-md-1">
+                <col class="col-md-1">
+                <col class="col-md-1">
+                <col class="col-md-1">
+                <col class="col-md-1">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Category</th>
+                    <th>Author</th>
+                    <th>Created Timestamp</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var newsVM in Model)
+                {
+                    <tr>
+                        <td>@newsVM.News.Name</td>
+                        <td>@newsVM.News.Description</td>
+                        <td>@newsVM.News.Category</td>
+                        <td>@newsVM.News.Author</td>
+                        <td>@newsVM.News.CreatedTimestamp.ToString()</td>
+                        <td><a class="btn btn-info" asp-controller="News" asp-action="Update" asp-route-id="@newsVM.News.Id">Update</a></td>
+                        <td><a class="btn btn-danger" asp-controller="News" asp-action="Delete" asp-route-id="@newsVM.News.Id">Delete</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
